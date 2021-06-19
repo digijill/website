@@ -22,7 +22,11 @@ const vsSource = `
 
 // fragment shader
 const fsSource = `
+    precision mediump float;
+
     varying lowp vec4 vColor;
+
+    uniform float time;
 
     void main(void) {
       gl_FragColor = vColor;
