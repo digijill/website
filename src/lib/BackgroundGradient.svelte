@@ -38,10 +38,11 @@ const fsSource = `
 
 // webgl program
 function main() {
+    // context is scoped to this block
     const canvas = document.querySelector("#glCanvas");
     const gl = canvas.getContext("webgl");
 
-    // only continue if WebGL is available and working
+    // check
     if (gl === null) {
         console.log("Unable to initialize WebGL. Your browser or machine may not support it.");
         return;
@@ -57,6 +58,7 @@ function main() {
         //compile the shader program
         gl.compileShader(shader);
 
+        // check
         if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
             console.log('An error occurred compiling the shaders: ' + gl.getShaderInfoLog(shader));
             gl.deleteShader(shader);
@@ -75,6 +77,7 @@ function main() {
         gl.attachShader(shaderProgram, fragmentShader);
         gl.linkProgram(shaderProgram);
 
+        // check
         if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
             console.log('Unable to initialize the shader program: ' + gl.getProgramInfoLog(shaderProgram));
             return null;
@@ -170,7 +173,7 @@ function main() {
     // tell WebGL how to pull out the positions from the position
     // buffer into the vertexPosition attribute.
     {
-        const numComponents = 2;  // pull out 4 values per iteration
+        const numComponents = 2;  // pull out 2 values per iteration
         const type = gl.FLOAT;    // the data in the buffer is 32bit floats
         const normalize = false;  // don't normalize
         const stride = 0;         // how many bytes to get from one set of values to the next
