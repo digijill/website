@@ -12,11 +12,11 @@ const vsSource = `
     uniform mat4 uModelViewMatrix;
     uniform mat4 uProjectionMatrix;
 
-    varying lowp vec4 vColor;
+    varying vec4 vColor;
 
     void main(void) {
-      gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
-      vColor = aVertexColor;
+        gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+        vColor = aVertexColor;
     }
 `;
 
@@ -24,12 +24,14 @@ const vsSource = `
 const fsSource = `
     precision mediump float;
 
-    varying lowp vec4 vColor;
+    varying vec4 vColor;
 
-    uniform float time;
+    uniform float uTime;
 
     void main(void) {
-      gl_FragColor = vColor;
+        gl_FragColor = vColor;
+        /* gl_FragColor.r = v_color.r * 0.5 * (1.0 + sin(4.0*uTime) );
+        gl_FragColor.g = v_color.g * 0.5 * (1.0 + sin(1.0 + 2.0*uTime) ); */
     }
 `;
 
@@ -37,10 +39,9 @@ const fsSource = `
 // webgl program
 function main() {
     const canvas = document.querySelector("#glCanvas");
-    // Initialize the GL context
     const gl = canvas.getContext("webgl");
 
-    // Only continue if WebGL is available and working
+    // only continue if WebGL is available and working
     if (gl === null) {
         console.log("Unable to initialize WebGL. Your browser or machine may not support it.");
         return;
@@ -93,6 +94,7 @@ function main() {
         uniformLocations: {
             projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
             modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
+            time: gl.getUniformLocation(shaderProgram, 'uTime')
         },
     };
 
@@ -129,7 +131,7 @@ function main() {
 
         return {
             position: positionBuffer,
-            color: colorBuffer,
+            color: colorBuffer
         };
     }
 
@@ -232,6 +234,7 @@ function main() {
         now *= 0.001;  // convert to seconds
         const deltaTime = now - then;
         then = now;
+        gl.uniform1f(programInfo.uniformLocations.time, false, deltaTime / 1000);
 
         drawScene(gl, programInfo, buffers, deltaTime);
 
