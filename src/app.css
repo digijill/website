@@ -1,0 +1,143 @@
+:root {
+	--pure-white: #ffffff;
+	--primary-color: #b9c6d2;
+	--secondary-color: #d0dde9;
+	--tertiary-color: #edf0f8;
+	--accent-color: #ff3e00;
+	--heading-color: rgba(0, 0, 0, 0.7);
+	--text-color: #444444;
+	--background-without-opacity: rgba(255, 255, 255, 0.7);
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--primary-color);
+	background: linear-gradient(
+		180deg,
+		var(--primary-color) 0%,
+		var(--secondary-color) 10.45%,
+		var(--tertiary-color) 41.35%
+	);
+	/* font-family: atten-new, 'Helvetica Neue', Arial, sans-serif; */
+	/* font-family: nimbus-sans, 'Helvetica Neue', Arial, sans-serif; */
+	/* font-family: hero-new, 'Helvetica Neue', Arial, sans-serif; */
+	font-family: neue-haas-unica, 'Helvetica Neue', Arial, sans-serif;	
+	font-weight: 400;
+	font-style: normal;
+	color: var(--pure-white);
+}
+
+body::before {
+	content: '';
+	width: 80vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 10vw;
+	z-index: -1;
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		var(--pure-white) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	opacity: 0.05;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#svelte {
+	min-height: 100vh;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1, h2 {
+	letter-spacing: 0.1rem;
+}
+
+h2, h3 {
+	font-size: 1.17rem;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	font-family: questa-grande, serif;
+	font-weight: 900;	
+	font-style: italic;
+	font-size: 6.4rem;
+	line-height: 1.25;
+}
+
+h2 {
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+h3 {
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+}
+
+pre {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--text-color);
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* layout */
+
+section.fullscreen {
+	width: 100vw;
+	height: 100vh;
+}
+
+div.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column; 
+	width: 100%; 
+	text-align: left;
+	margin: 10% 0; 
+	min-height: 200px; 
+}
+
+@media (min-width: 720px) {
+	h1 {
+		/* font-size: 2.4rem; */
+	}
+}
