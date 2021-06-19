@@ -2,6 +2,8 @@
 import { mat4 } from 'gl-matrix';
 import { onMount } from 'svelte';
 
+var then = 0;
+
 // vertex shader
 const vsSource = `
     attribute vec4 aVertexPosition;
@@ -127,7 +129,7 @@ function main() {
         };
     }
 
-    function drawScene(gl, programInfo, buffers) {
+    function drawScene(gl, programInfo, buffers, deltaTime) {
         gl.clearColor(0.0, 0.0, 0.0, 1.0);    // clear to black
         gl.clearDepth(1.0);                   // clear everything
         gl.enable(gl.DEPTH_TEST);             // enable depth testing
@@ -221,7 +223,18 @@ function main() {
     }
 
     const buffers = initBuffers(gl);
-    drawScene(gl, programInfo, buffers);
+
+    function render(now) {
+        now *= 0.001;  // convert to seconds
+        const deltaTime = now - then;
+        then = now;
+
+        drawScene(gl, programInfo, buffers, deltaTime);
+
+        requestAnimationFrame(render);
+    }
+  
+    requestAnimationFrame(render);
 }
 
 onMount(() => main());
