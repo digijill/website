@@ -30,8 +30,8 @@ const fsSource = `
 
     void main(void) {
         gl_FragColor = vColor;
-        /* gl_FragColor.r = v_color.r * 0.5 * (1.0 + sin(4.0*uTime) );
-        gl_FragColor.g = v_color.g * 0.5 * (1.0 + sin(1.0 + 2.0*uTime) ); */
+        gl_FragColor.r = vColor.r * 0.5 * (1.0 + sin(4.0*uTime) );
+        gl_FragColor.g = vColor.g * 0.5 * (1.0 + sin(1.0 + 2.0*uTime) );
     }
 `;
 
@@ -220,6 +220,9 @@ function main() {
         programInfo.uniformLocations.modelViewMatrix,
         false,
         modelViewMatrix);
+    gl.uniform1f(
+        programInfo.uniformLocations.time, 
+        deltaTime);
 
     {
         const offset = 0;
@@ -234,9 +237,8 @@ function main() {
         now *= 0.001;  // convert to seconds
         const deltaTime = now - then;
         then = now;
-        gl.uniform1f(programInfo.uniformLocations.time, false, deltaTime / 1000);
 
-        drawScene(gl, programInfo, buffers, deltaTime);
+        drawScene(gl, programInfo, buffers, 1.0);
 
         requestAnimationFrame(render);
     }
