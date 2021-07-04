@@ -282,4 +282,10 @@ onMount(() => main());
 </script>
 
 
-<canvas id="glCanvas"></canvas>
+<canvas id="glCanvas" class="fullscreen"></canvas>
+
+<style>
+    canvas {
+        position: absolute;
+    }
+</style>
