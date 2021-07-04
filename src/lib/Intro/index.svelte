@@ -1,6 +1,5 @@
 <script>
     import BackgroundGradient from '$lib/BackgroundGradient.svelte';
-import BackGroundGradient from '$lib/BackgroundGradient.svelte';
 </script>
 
 <section class="fullscreen">
@@ -15,6 +14,12 @@ import BackGroundGradient from '$lib/BackgroundGradient.svelte';
 </section>
 
 <style>
+    div.center {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+    }
+    
     h3 {
         /* text-align: right; */
         margin-left: 2.5rem;
