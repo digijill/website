@@ -1,13 +1,15 @@
 <script>
     import BackgroundGradient from '$lib/BackgroundGradient.svelte';
+    import NavBottom from '$lib/NavBottom.svelte';
 </script>
 
 <section class="fullscreen">
     <BackgroundGradient />
     <div class="fullscreen center">
         <div class="content">
-            <p>Hi, my name is <span class="emphasize">Jill Fantauzza</span> and this is my <span class="emphasize">portfolio</span>. I am a versatile digital producer. If you'd like me to help you with your next digital experience, geospatial visualization, or data visualization, let's talk!</p>
+            <p>Hi, my name is <span class="emphasize">Jill Fantauzza</span> and this is my <span class="emphasize">portfolio</span>. I am a versatile <span class="emphasize">digital artist, designer, and programmer</span>. If you'd like me to help you with your next digital experience, geospatial visualization, or data visualization, <a href="mailto:fantauzza@protonmail.ch"><span class="emphasize italic">let's talk!</span></a></p>
         </div>
+        <NavBottom nextSection = "deai" />
     </div>
 </section>
 
@@ -23,12 +25,6 @@
         text-transform: none;
         font-weight: 300;
         line-height: 1.4;
-    }
-
-    .emphasize {
-        font-family: usual, sans-serif;
-        font-weight: 400;
-        font-style: normal;
     }
 
     p {
