@@ -51,14 +51,19 @@ const fs = `
     varying vec2 v_texcoord;
     uniform float uTime;
 
-    vec3 tl0 = vec3(0.149,0.141,0.912);
-    vec3 tr0 = vec3(0.149,0.141,0.912);
-    vec3 bl0 = vec3(0.149,0.141,0.912); 
-    vec3 br0 = vec3(0.149,0.141,0.912);
-    vec3 tl1 = vec3(1.000,0.833,0.224);
-    vec3 tr1 = vec3(1.000,0.833,0.224);
-    vec3 bl1 = vec3(1.000,0.833,0.224);
-    vec3 br1 = vec3(1.000,0.833,0.224);
+    vec3 tl0 = vec3(0.93725,0.16471,0.75686);   // rose
+    vec3 tl1 = vec3(0.81176,0.60392,0.67843);   // lavender
+
+    vec3 tr0 = vec3(0.11765,0.69804,1.0);       // ocean
+    vec3 tr1 = vec3(0.76471,0.90196,0.54510);   // lime
+
+ 
+    vec3 bl0 = vec3(0.26275,0.33333,0.78431);   // sapphire
+    vec3 bl1 = vec3(0.56471,0.72549,0.74902);   // manatee
+
+    vec3 br0 = vec3(1.0,0.78039,0.0);           // sun
+    vec3 br1 = vec3(1.0,0.67451,0.43137);       // turmeric
+
 
     void main() {
         float pct = abs(sin(uTime));
