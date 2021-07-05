@@ -2,41 +2,20 @@
 import { onMount } from 'svelte';
 
 var time0 = new Date().getTime();
-var speed = 5;
+var speed = 2;  // lower is faster
 
-const positions = [
+const verts = [
     -1, -1,
     1, -1,
-    -1,  1,
-    -1,  1,
-    1, -1,
-    1,  1
+    1, 1,
+    -1, 1
 ];
 
-const texCoords = [
-    0,  0,
-    1,  0,
-    0,  1,
-    0,  1,
-    1,  0,
-    1,  1
+const corners = [
+    0, 1,
+    2, 0,
+    2, 3
 ];
-
-var loc;
-const fArr = arr => new Float32Array(arr);
-
-// const verts = [
-//     -1, -1,
-//     1, -1,
-//     1, 1,
-//     -1, 1
-// ];
-
-// const corners = [
-//     0, 1,
-//     2, 0,
-//     2, 3
-// ];
 
 // vertex shader to establish 2x2 texture so that each pixel is interpolated across four colors
 // instead of over two triangles
@@ -50,7 +29,7 @@ const vs = `
     }
 `;
 
-// hard coding in the colors to be more efficient
+// hard coding the colors to be more efficient
 const fs = `
     precision mediump float;
     varying vec2 coord2D;
@@ -79,11 +58,12 @@ const fs = `
                     mix(mix(tl0, tr0, coord2D.x), mix(tl1, tr1, coord2D.x), pct),
                     coord2D.y
                 )), 1);
+
         gl_FragColor = pixel;
     }
 `;
 
-// step 2: create and compile the shaders
+// create and compile the shaders
 function loadShader(gl, type, source) {
     const shader = gl.createShader(type);
 
@@ -103,7 +83,7 @@ function loadShader(gl, type, source) {
     return shader;
 }
 
-// step 3: initialize shader program and attach the shaders
+// initialize shader program and attach the shaders
 function initShaderProgram(gl, vsSource, fsSource) {
     const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
     const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
@@ -121,56 +101,44 @@ function initShaderProgram(gl, vsSource, fsSource) {
     return shaderProgram;
 }
 
-function initBuffer(gl, data) {
-
-    // create buffer
-    const buffer = gl.createBuffer();
-    // bind to the gl context
-    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    // pass into WebGL
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW);
-
-    return buffer;
-}
-
-
-// webgl program
 function main() {
     const canvas = document.querySelector("#glCanvas");
     const gl = canvas.getContext("webgl");
+    var loc;
 
     if (canvas.width !== innerWidth || canvas.height !== innerHeight) {
-            [canvas.width, canvas.height] = [innerWidth, innerHeight];
-            gl.viewport(0, 0, canvas.width, canvas.height);
-        }
+        [canvas.width, canvas.height] = [innerWidth, innerHeight];
+        gl.viewport(0, 0, canvas.width, canvas.height);
+    }
 
     const program = initShaderProgram(gl, vs, fs);
 
+    // create buffers
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
-    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array([0,1,2,0,2,3]), gl.STATIC_DRAW);  
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(corners), gl.STATIC_DRAW);
+
     gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
-    gl.bufferData(gl.ARRAY_BUFFER, fArr([-1,-1,1,-1,1,1,-1,1]), gl.STATIC_DRAW);   
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);   
+
+    // setup attribute
     gl.enableVertexAttribArray(loc = gl.getAttribLocation(program, "verts"));
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0); 
     
+    // setup uniform
     const timeLoc = gl.getUniformLocation(program, 'uTime');
 
-
+    // draw loop
     function draw() {
         let newTime = new Date().getTime() / 1000 - time0 /1000;
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
-        gl.clear(gl.COLOR_BUFFER_BIT);
 
         gl.useProgram(program);
         gl.uniform1f(timeLoc, newTime/speed);
-        // gl.drawArrays(gl.TRIANGLES, 0, 6);
         gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_BYTE, 0); 
     }
 
     function render(now) {
-
         draw();
-
         requestAnimationFrame(render);
     }
 
@@ -181,7 +149,6 @@ function main() {
 onMount(() => main());
 
 </script>
-
 
 <canvas id="glCanvas" class="fullscreen"></canvas>
 
