@@ -20,39 +20,44 @@ const texCoords = [
     0,  1,
     1,  0,
     1,  1
-]
+];
 
-// var tl0 = [255/255, 219/255, 210/255];
-// var tr0 = [231/255, 194/255, 227/255];
-// var bl0 = [179/255, 227/255, 232/255];
-// var br0 = [179/255, 227/255, 191/255];
+var loc;
+const fArr = arr => new Float32Array(arr);
 
-// var tl1 = [239/255, 42/255, 193/255]; // rose
-// var tr1 = [30/255, 178/255, 255/255]; // ocean
-// var bl1 = [67/255, 85/255, 200/255]; // sapphire
-// var br1 = [255/255, 199/255, 0]; // sun
+// const verts = [
+//     -1, -1,
+//     1, -1,
+//     1, 1,
+//     -1, 1
+// ];
+
+// const corners = [
+//     0, 1,
+//     2, 0,
+//     2, 3
+// ];
 
 // vertex shader to establish 2x2 texture so that each pixel is interpolated across four colors
 // instead of over two triangles
 const vs = `
-    attribute vec4 position;
-    attribute vec2 texcoord;
-    varying vec2 v_texcoord;
+    attribute vec2 verts;
+    varying vec2 coord2D;
     
     void main() {
-        gl_Position = position;
-        v_texcoord = texcoord;
+        coord2D = verts * 0.5 + 0.5; // convert to quad space 0,0 <=> 1, 1
+        gl_Position = vec4(verts, 1, 1); 
     }
 `;
 
 // hard coding in the colors to be more efficient
 const fs = `
     precision mediump float;
-    varying vec2 v_texcoord;
+    varying vec2 coord2D;
     uniform float uTime;
 
     vec3 tl0 = vec3(0.93725,0.16471,0.75686);   // rose
-    vec3 tl1 = vec3(1.0,0.611765,0.0);   // saffron
+    vec3 tl1 = vec3(1.0,0.611765,0.0);          // saffron
 
     vec3 tr0 = vec3(0.11765,0.69804,1.0);       // ocean
     vec3 tr1 = vec3(0.76471,0.90196,0.54510);   // lime
@@ -61,17 +66,20 @@ const fs = `
     vec3 bl0 = vec3(0.26275,0.33333,0.78431);   // sapphire
     vec3 bl1 = vec3(0.81176,0.60392,0.67843);   // lavender
 
-    vec3 br0 = vec3(1.0,0.78039,0.0);           // sun
+    // vec3 br0 = vec3(1.0,0.78039,0.0);           // sun
+    vec3 br0 = vec3(1.0,0.611765,0.0);          // saffron
     vec3 br1 = vec3(1.0,0.67451,0.43137);       // turmeric
 
 
     void main() {
         float pct = abs(sin(uTime));
 
-        vec3 l = mix(mix(bl0, tl0, v_texcoord.t), mix(bl1, tl1, v_texcoord.t), pct);
-        vec3 r = mix(mix(br0, tr0, v_texcoord.t), mix(br1, tr1, v_texcoord.t), pct);
-        vec3 c = mix(l, r, v_texcoord.s);
-        gl_FragColor = vec4(c, 1);
+        vec4 pixel = vec4(vec3(mix(
+                    mix(mix(bl0, br0, coord2D.x), mix(bl1, br1, coord2D.x), pct),
+                    mix(mix(tl0, tr0, coord2D.x), mix(tl1, tr1, coord2D.x), pct),
+                    coord2D.y
+                )), 1);
+        gl_FragColor = pixel;
     }
 `;
 
@@ -115,12 +123,11 @@ function initShaderProgram(gl, vsSource, fsSource) {
 
 function initBuffer(gl, data) {
 
-    // create buffer for positions
+    // create buffer
     const buffer = gl.createBuffer();
     // bind to the gl context
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-
-    // pass the positions into WebGL
+    // pass into WebGL
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW);
 
     return buffer;
@@ -139,27 +146,15 @@ function main() {
 
     const program = initShaderProgram(gl, vs, fs);
 
-    const positionLoc = gl.getAttribLocation(program, 'position');
-    const texcoordLoc = gl.getAttribLocation(program, 'texcoord');
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array([0,1,2,0,2,3]), gl.STATIC_DRAW);  
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER, fArr([-1,-1,1,-1,1,1,-1,1]), gl.STATIC_DRAW);   
+    gl.enableVertexAttribArray(loc = gl.getAttribLocation(program, "verts"));
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0); 
+    
     const timeLoc = gl.getUniformLocation(program, 'uTime');
 
-    function createBufferAndSetupAttribute(loc, data) {
-        const buffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW);
-        gl.enableVertexAttribArray(loc);
-        gl.vertexAttribPointer(
-            loc,
-            2,  // 2 elements per iteration
-            gl.FLOAT,  // type of data in buffer
-            false,  // normalize
-            0,  // stride
-            0,  // offset
-        );
-    }
-
-    createBufferAndSetupAttribute(positionLoc, positions);
-    createBufferAndSetupAttribute(texcoordLoc, texCoords);
 
     function draw() {
         let newTime = new Date().getTime() / 1000 - time0 /1000;
@@ -168,7 +163,8 @@ function main() {
 
         gl.useProgram(program);
         gl.uniform1f(timeLoc, newTime/speed);
-        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        // gl.drawArrays(gl.TRIANGLES, 0, 6);
+        gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_BYTE, 0); 
     }
 
     function render(now) {
