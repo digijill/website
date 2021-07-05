@@ -19,16 +19,16 @@
 
     .content {
         max-width: 80vw;
-        font-size: 4.5vw;
+        font-size: 4vw;
         text-transform: none;
         font-weight: 300;
         line-height: 1.4;
     }
 
     .emphasize {
-        /* font-family: questa-grande, serif;
-        font-weight: 300;	
-        font-style: italic; */
+        font-family: usual, sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     p {
