@@ -5,7 +5,7 @@
 
 <section 
     id={id}
-    class="panel center standard-margin"
+    class="panel center"
     class:panelColor="{project.panelColor === true}"
 >
     <video
@@ -38,7 +38,10 @@
         padding-top: 0.5rem;
 	}
 
-	video {
+	img, video {
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
 	}
 </style>

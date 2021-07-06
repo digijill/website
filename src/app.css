@@ -33,6 +33,13 @@ body {
 	scroll-behavior: smooth;
 }
 
+img, video {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
 #svelte {
 	min-height: 100vh;
 }
