@@ -38,7 +38,7 @@
 
 </style>
 
-<footer id="#footer" class="standard-margin panelColor">
+<footer id="footer" class="standard-margin panelColor">
     <div class="credits">
         {@html footerContent}
     </div>

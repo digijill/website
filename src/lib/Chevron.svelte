@@ -1,7 +1,6 @@
 <script>
     import { onMount } from 'svelte';
     let nextSectionEl;
-    export let text;
     export let nextSection;
 
     const scrollToSection = () => {
@@ -17,8 +16,6 @@
 </script>
 
 <div class="active-group" on:pointerup = { scrollToSection }>
-
-    <p>{ text }</p>
   
     <svg
         class="chevron"
@@ -37,12 +34,3 @@
     </svg>
 
 </div>
-
-<style>
-
-p {
-    margin-top: 4rem;
-    font-weight: 400;
-}
-
-</style>

@@ -1,11 +1,10 @@
 <script>
     import Chevron from '$lib/Chevron.svelte';
-    export let text;
     export let nextSection;
 </script>
   
 <div class="bottom-nav">
-    <Chevron { text } { nextSection } />
+    <Chevron { nextSection } />
 </div>
 
 <style>
@@ -15,6 +14,7 @@
         text-align: center;
         position: relative;
         z-index: 10;
+        margin-top: 3rem;
     }
-    
+
 </style>

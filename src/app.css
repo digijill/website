@@ -23,6 +23,7 @@ body {
 	font-feature-settings: "pnum" on,"lnum" on;
 	text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+	cursor: none;
 }
 
 * {
@@ -52,6 +53,9 @@ a:hover {
 	text-decoration: underline;
 }
 
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
 .emphasize {
 	font-weight: 400;
 }
@@ -77,6 +81,14 @@ button:focus:not(:focus-visible) {
 	height: 100vh;
 }
 
+.content p {
+	max-width: 80vw;
+	font-size: 4vw;
+	text-transform: none;
+	font-weight: 300;
+	line-height: 1.4;
+}
+
 .panel {
 	position: relative;
 	width: 100vw;
@@ -92,8 +104,10 @@ div.center {
 	position: relative;
 	flex-direction: column;
 	width: 100vw;
+	height: 100vh;
 	position: relative;
 	align-items: center;
+	justify-content: center;
 }
 
 .background-pattern {

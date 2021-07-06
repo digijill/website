@@ -3,7 +3,7 @@
     import NavBottom from '$lib/NavBottom.svelte';
 </script>
 
-<section class="fullscreen">
+<section id="intro" class="fullscreen">
     <BackgroundGradient />
     <div class="fullscreen center">
         <div class="content">
@@ -12,24 +12,3 @@
         <NavBottom text = "scroll to view work" nextSection = "flock" />
     </div>
 </section>
-
-<style>
-    div.center {
-        height: 100vh;
-        justify-content: center;
-    }
-
-    .content {
-        max-width: 80vw;
-        font-size: 4vw;
-        text-transform: none;
-        font-weight: 300;
-        line-height: 1.4;
-    }
-
-    .content p {
-        max-width: 80vw;
-        font-size: 4vw;
-        line-height: 1.4;
-    }
-</style>
