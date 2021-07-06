@@ -1,17 +1,14 @@
 <script>
     import Chevron from '$lib/Chevron.svelte';
+    export let text;
     export let nextSection;
 </script>
   
 <div class="bottom-nav">
-    <p class="text">scroll to view work</p>
-    <Chevron { nextSection } />
+    <Chevron { text } { nextSection } />
 </div>
 
 <style>
-    p.text {
-        margin-top: 4rem;
-    }
 
     div.bottom-nav {
         width: 100vw;
@@ -19,4 +16,5 @@
         position: relative;
         z-index: 10;
     }
+    
 </style>

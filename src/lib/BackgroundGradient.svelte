@@ -2,7 +2,7 @@
 import { onMount } from 'svelte';
 
 var time0 = new Date().getTime();
-var speed = 2;  // lower is faster
+var speed = 3;  // lower is faster
 
 const verts = [
     -1, -1,
