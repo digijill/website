@@ -17,8 +17,5 @@
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0"
   },
-  "type": "module",
-  "dependencies": {
-    "gl-matrix": "^3.3.0"
-  }
+  "type": "module"
 }
