@@ -180,10 +180,6 @@ button:focus:not(:focus-visible) {
 
 /* cross-component styles */
 
-a:hover ~ .cursor {
-	transform: scale(6);
-}
-
 @media (min-width: 720px) {
 	h1 {
 		/* font-size: 2.4rem; */
