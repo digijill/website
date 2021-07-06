@@ -12,7 +12,7 @@
             m.x = e.pageX;
             m.y = e.pageY;
 
-            cursor.setAttribute("style", "top: " + (m.y - 25)+"px; left: "+(m.x - 25)+"px;");
+            cursor.setAttribute("style", "top: " + m.y +"px; left: "+ m.x +"px;");
         })
 
     })
@@ -34,5 +34,8 @@
         background-color: var(--text-color);
         opacity: 0.5;
         pointer-events: none;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: difference;
     }
+
 </style>
