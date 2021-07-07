@@ -10,7 +10,6 @@
     class="panel center"
     class:panelColor="{project.panelColor === true}"
 >
-
     <video class="hero-video" style="background-image: url({ poster })"
         { poster }
         { src }
@@ -28,9 +27,12 @@
             <h3>{@html event}</h3>
         {/if}
     </div>
-	<div class="nav-container">
-		<NavBottom { nextSection } />
-	</div>
+
+	{#if (nextSection)}
+		<div class="nav-container">
+			<NavBottom { nextSection } />
+		</div>
+	{/if}
 
 </section>
 
