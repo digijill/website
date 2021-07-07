@@ -24,10 +24,14 @@
     <img 
         src={project.src} 
         alt={project.alt} 
-        srcset="{project.src} 2880w, {project.src_small} 500w"
+        srcset="{project.src} 2880w, {project.src_small} 1000w"
         class:contain="{project.id === 'oqy'}"
         class:bottom-left="{project.id === 'flock-mak-salle'}"
+        class:seeingearth="{project.id === 'seeingearth'}"
+        class:carboncurve="{project.id === 'carboncurve'}"
+        class:gamelab="{project.id === 'game-lab'}"
     >
+
     <div class="headline bleed-padding" bind:this="{headline}">
         {#if (project.title)}
             <h2>{@html project.title}</h2>
@@ -79,9 +83,17 @@
         bottom: 2rem;
     }
 
-    @media screen and (max-width: 1000px) {
-        img.bottom-left {
-            object-position: 90% 100%;
+    @media screen and (max-width: 500px) {
+        .seeingearth {
+            object-position: 60% 100%;
+        }
+
+        .carboncurve {
+            object-position: 50% 60%;
+        }
+
+        .gamelab {
+            object-position: right;
         }
     }
 
