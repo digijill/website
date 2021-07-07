@@ -24,6 +24,7 @@ export async function load({ page, fetch }) {
     import PanelFullText from '$lib/PanelFullText/index.svelte';
     import PanelFramedImage from '$lib/PanelFramedImage/index.svelte';
     import PanelHeroVideo from '$lib/PanelHeroVideo/index.svelte';
+    import PanelHeroImage from '$lib/PanelHeroImage/index.svelte';
     import PanelSplit from '$lib/PanelSplit/index.svelte';
     import Footer from '$lib/Footer.svelte';
 	import Cursor from '$lib/Cursor.svelte';
@@ -39,6 +40,8 @@ export async function load({ page, fetch }) {
     {#each content as project}
         {#if (project.format == "hero-video")}
             <PanelHeroVideo {project} />
+        {:else if (project.format == "hero-image")}
+            <PanelHeroImage {project} />
         {:else if (project.format == "full-text")}
             <PanelFullText {project} />
         {:else if (project.format == "full-bleed")}
