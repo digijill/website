@@ -21,8 +21,9 @@ export async function load({ page, fetch }) {
 
 <script>
     import PanelFullBleed from '$lib/PanelFullBleed/index.svelte';
+    import PanelFullText from '$lib/PanelFullText/index.svelte';
     import PanelFramedImage from '$lib/PanelFramedImage/index.svelte';
-    import PanelVideo from '$lib/PanelVideo/index.svelte';
+    import PanelHeroVideo from '$lib/PanelHeroVideo/index.svelte';
     import PanelSplit from '$lib/PanelSplit/index.svelte';
     import Footer from '$lib/Footer.svelte';
 	import Cursor from '$lib/Cursor.svelte';
@@ -36,12 +37,14 @@ export async function load({ page, fetch }) {
 <div class="wrapper background-pattern">
 
     {#each content as project}
-        {#if (project.format == "full-bleed")}
+        {#if (project.format == "hero-video")}
+            <PanelHeroVideo {project} />
+        {:else if (project.format == "full-text")}
+            <PanelFullText {project} />
+        {:else if (project.format == "full-bleed")}
             <PanelFullBleed {project} />
         {:else if (project.format == "framed-image")}
             <PanelFramedImage {project} />
-        {:else if (project.format == "video")}
-            <PanelVideo {project} />
         {:else if (project.format == "split")}
             <PanelSplit {project} />
         {/if}

@@ -14,7 +14,6 @@
         text-align: center;
         position: relative;
         z-index: 10;
-        margin-top: 3rem;
     }
 
 </style>

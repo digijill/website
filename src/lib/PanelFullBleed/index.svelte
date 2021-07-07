@@ -71,19 +71,12 @@
     .headline {
         opacity: 0;
         transition: opacity 3s;
-        position: absolute;
-        left: 0;
-        top: 0;
     }
 
     .button-position {
         position: absolute;
         left: 0;
         bottom: 2rem;
-    }
-
-    .bleed-padding {
-        padding: 2rem;
     }
 
     @media screen and (max-width: 1000px) {
