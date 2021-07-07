@@ -1,8 +1,24 @@
 <script>
+	import { onMount } from 'svelte';
 	import NavBottom from '$lib/NavBottom.svelte';
 
     export let project;
-    let {format, id, title, event, poster, src, nextSection} = project;
+    let {format, id, title, event, poster, poster_sm, src, src_sm, nextSection} = project;
+	let breakpointCondition = "(max-width: 500px)";
+	let flag = false;
+
+	const checkView = () => {
+        let view = window.matchMedia(breakpointCondition);
+        if (view.matches) {
+            flag = true;
+        } else {
+            flag = false;
+        }
+    }
+
+    onMount(() => {
+        checkView();
+    });
 </script>
 
 <section 
@@ -10,14 +26,26 @@
     class="panel center"
     class:panelColor="{project.panelColor === true}"
 >
-    <video class="hero-video" style="background-image: url({ poster })"
-        { poster }
-        { src }
-		autoplay
-		muted
-		loop>
-        <track kind="captions">
-    </video>
+
+	{#if flag}
+		<video class="hero-video" style="background-image: url({ poster_sm })"
+			poster = { poster_sm }
+			src = { src_sm }
+			autoplay
+			muted
+			loop>
+			<track kind="captions">
+		</video>
+	{:else}
+		<video class="hero-video" style="background-image: url({ poster })"
+			{ poster }
+			{ src }
+			autoplay
+			muted
+			loop>
+			<track kind="captions">
+		</video>
+	{/if}
 
 	<div class="headline bleed-padding">
         {#if (title)}
