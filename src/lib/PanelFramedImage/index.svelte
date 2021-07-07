@@ -3,7 +3,6 @@
     let imgEl;
 
     const sizeCaption = () => {
-        console.log("load");
         let captionSize = `${imgEl.width}px`;
         if (project.caption) {
             let size = document.getElementById("captionPara");

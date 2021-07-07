@@ -121,7 +121,7 @@ button:focus:not(:focus-visible) {
 	padding: 6rem;
 }
 
-div.center {
+.center {
 	display: flex;
 	position: relative;
 	flex-direction: column;
