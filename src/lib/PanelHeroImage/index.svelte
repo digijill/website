@@ -14,7 +14,7 @@
 	<img 
 		src={project.src} 
 		alt={project.alt} 
-		srcset="{project.src} 2880w, {project.src_small} 500w"
+		srcset="{project.src} 2880w, {project.src_small} 1000w"
 	>
 
 	<div class="headline bleed-padding">
