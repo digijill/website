@@ -6,7 +6,9 @@
 </script>
 
 <footer id="footer" class="panelColor">
-    {@html footerContent}
+    <div class="footer-text">
+        {@html footerContent}
+    </div>
     <LinkToAnchor { linkText } {link} />
 </footer>
 
@@ -16,6 +18,19 @@
         display: flex;
         justify-content: space-between;
         padding: 2rem;
+    }
+
+    @media (max-width: 500px) {
+        footer {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+
+        .footer-text {
+            margin-top: 1rem;
+        }
     }
 
 </style>
