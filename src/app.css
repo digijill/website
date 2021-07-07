@@ -132,6 +132,13 @@ button:focus:not(:focus-visible) {
 	justify-content: center;
 }
 
+.split {
+	display: flex;
+	justify-content: left;
+	flex-direction: row;
+	align-items: center;
+}
+
 .background-pattern {
 	background-image: url("/images/backgrounds/pattern.png");
 	background-size: 10vh 10vh;
