@@ -35,6 +35,7 @@
         opacity: 0.5;
         pointer-events: none;
         transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
     }
 
 </style>

@@ -102,6 +102,7 @@
 
     .active .open-close-button {
         transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
 
     .description-short {

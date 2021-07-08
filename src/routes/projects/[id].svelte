@@ -28,12 +28,32 @@ export async function load({ page, fetch }) {
     import PanelSplit from '$lib/PanelSplit/index.svelte';
     import Footer from '$lib/Footer.svelte';
 	import Cursor from '$lib/Cursor.svelte';
+    import { onMount } from 'svelte';
+
+    let breakpointCondition = "(max-width: 500px)";
+	let flag = true;
 
     export let projectDescr;
     let { id, title, summary, content, footerContent, linkText, link } = projectDescr;
+
+	const checkView = () => {
+        let view = window.matchMedia(breakpointCondition);
+        if (view.matches) {
+            flag = false;
+        } else {
+            flag = true;
+        }
+    }
+
+	onMount(() => {
+        checkView();
+    });
+
 </script>
 
-<Cursor />
+{#if flag}
+	<Cursor />
+{/if}
 
 <div class="wrapper background-pattern">
 

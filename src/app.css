@@ -194,6 +194,7 @@ ul, ol {
 
 .button:hover {
     transform: scale(1.02);
+	-webkit-transform: scale(1.02);
 }
 
 /* elements */
@@ -229,6 +230,10 @@ button:focus:not(:focus-visible) {
 
 	p.small {
 		font-size: 0.75rem;
+	}
+
+	body {
+		cursor: auto;
 	}
 
 }
