@@ -7,7 +7,6 @@
 <section 
     id={project.id}
     class="fullscreen"
-    class:panelColor="{project.panelColor === true}"
 >
     <BackgroundGradient />
     <div class="fullscreen center">
@@ -16,3 +15,10 @@
        </div>
     </div>
 </section>
+
+<style>
+section {
+    background-image: none;
+    background-color: #1EB2FF;
+}
+</style>
