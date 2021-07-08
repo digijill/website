@@ -38,6 +38,7 @@
 		</video>
 	{:else}
 		<video class="hero-video" style="background-image: url({ poster })"
+			class:carboncurve="{id === 'carboncurve-hero'}"
 			{ poster }
 			{ src }
 			autoplay
@@ -81,5 +82,9 @@
 	.nav-container {
 		position: absolute;
 		bottom: 2rem;
+	}
+
+	video.carboncurve {
+		object-position: 0 0;
 	}
 </style>

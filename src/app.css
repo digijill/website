@@ -30,7 +30,6 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	scroll-behavior: smooth;
 }
 
 img, video {
@@ -229,6 +228,10 @@ button:focus:not(:focus-visible) {
 
 	.standard-margin, .bleed-padding {
 		padding: 1rem;
+	}
+
+	p.small {
+		font-size: 0.75rem;
 	}
 
 }
