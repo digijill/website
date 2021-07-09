@@ -30,7 +30,7 @@ export async function load({ page, fetch }) {
 	import Cursor from '$lib/Cursor.svelte';
     import { onMount } from 'svelte';
 
-    let breakpointCondition = "(max-width: 500px)";
+    let breakpointCondition = "(max-width: 1000px)";
 	let flag = true;
 
     export let projectDescr;
