@@ -188,7 +188,6 @@ ul, ol {
 }
 
 .button {
-    cursor: pointer;
 	color: var(--pure-white);
 }
 
@@ -204,6 +203,12 @@ button:focus:not(:focus-visible) {
 }
 
 /* cross-component styles */
+
+@media (max-width: 1000px) {
+	body {
+		cursor: auto;
+	}
+}
 
 @media (max-width: 500px) {
 	h2 {
@@ -230,10 +235,6 @@ button:focus:not(:focus-visible) {
 
 	p.small {
 		font-size: 0.75rem;
-	}
-
-	body {
-		cursor: auto;
 	}
 
 }
