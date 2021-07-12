@@ -1,15 +1,5 @@
 <script>
     export let project;
-    let imgEl;
-
-    const sizeCaption = () => {
-        let captionSize = `${imgEl.width}px`;
-        if (project.caption) {
-            let size = document.getElementById("captionPara");
-            size.style.width = captionSize;
-        }
-    }
-
 </script>
 
 <section 
@@ -19,8 +9,6 @@
 >
     <div class="container">
         <img
-            bind:this={imgEl} 
-            on:load={sizeCaption}
             src={project.src} 
             alt={project.alt}
             srcset="{project.src} 2880w, {project.src_small} 500w"
@@ -52,5 +40,6 @@
         font-size: 1rem;
         text-align: left;
         margin-top: 0.5rem;
+        width: 100%;
     }
 </style>
