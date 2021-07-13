@@ -4,8 +4,8 @@
 
     let breakpointCondition = "(min-width: 1000px)";
     let display = "none";
-    let top = 0;
-    let left = 0;
+    let top = -50;
+    let left = -50;
 
     const checkViewForCursor = () => {
         let view = window.matchMedia(breakpointCondition);
