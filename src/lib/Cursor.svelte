@@ -2,31 +2,40 @@
 
     import { onMount } from 'svelte';
 
-    let cursor;
-    let m = { x: 0, y:0 };
+    let breakpointCondition = "(min-width: 1000px)";
+    let display = "none";
+    let top = 0;
+    let left = 0;
 
-    onMount(() => {
-        cursor = document.querySelector('.cursor');
+    const checkViewForCursor = () => {
+        let view = window.matchMedia(breakpointCondition);
 
-        document.addEventListener('mousemove', e => {
-            m.x = e.pageX;
-            m.y = e.pageY;
+        function trackCursor(e) {
+            left = e.pageX;
+            top = e.pageY;
+        }
 
-            cursor.setAttribute("style", "top: " + m.y +"px; left: "+ m.x +"px;");
-        })
+        if (view.matches) {
+            display = "block";
+            document.addEventListener('mousemove', trackCursor);
 
-    })
+        } else {
+            display = "none";
+            document.removeEventListener('mousemove', trackCursor);
+        }
+    }
+
+    onMount(() => { checkViewForCursor() })
 
 </script>
 
+<svelte:window on:resize={ checkViewForCursor } />
 
-<div class="cursor"></div>
+<div class="cursor" style = "display: { display }; left: { left }px; top: { top }px;"></div>
 
 <style>
     .cursor {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 50px;
         height: 50px;
         border-radius: 50%;
