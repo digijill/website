@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
     import PanelHeroVideo from '$lib/PanelHeroVideo/index.svelte';
+    import PanelFramedVideo from '$lib/PanelFramedVideo/index.svelte';
 
     export let project;
 
@@ -27,7 +28,7 @@
 {#if (videoView === "heroVideo")}
     <PanelHeroVideo {project} />
 {:else if (videoView === "framedVideo")}
-    <PanelHeroVideo {project} />
+    <PanelFramedVideo {project} />
 {:else if (videoView === "mobile")}
     <PanelHeroVideo {project} />
 {:else}
