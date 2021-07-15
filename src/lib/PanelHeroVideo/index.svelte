@@ -3,7 +3,7 @@
 	import NavBottom from '$lib/NavBottom.svelte';
 
     export let project;
-    let {format, id, title, event, poster, poster_sm, src, src_sm, nextSection} = project;
+    let {format, id, title, event, poster, poster_sm, src, src_sm, object_fit, object_position, nextSection} = project;
 	let breakpointCondition = "(max-width: 500px)";
 	let flag = false;
 
@@ -28,7 +28,7 @@
 >
 
 	{#if flag}
-		<video class="hero-video" style="background-image: url({ poster_sm })"
+		<video class="hero-video" style="object-fit: { object_fit }; object-position: { object_position }; background-image: url('{ poster_sm }');"
 			poster = { poster_sm }
 			src = { src_sm }
 			autoplay
@@ -37,7 +37,7 @@
 			<track kind="captions">
 		</video>
 	{:else}
-		<video class="hero-video" style="background-image: url({ poster })"
+		<video class="hero-video" style="object-fit: { object_fit }; object-position: { object_position }; background-image: url({ poster });"
 			class:carboncurve="{id === 'carboncurve-hero'}"
 			{ poster }
 			{ src }
@@ -48,14 +48,16 @@
 		</video>
 	{/if}
 
-	<div class="headline bleed-padding">
-        {#if (title)}
-            <h2>{@html title}</h2>
-        {/if}
-        {#if (event)}
-            <h3>{@html event}</h3>
-        {/if}
-    </div>
+	{#if (id !== "carboncurve-hero")}
+		<div class="headline bleed-padding">
+			{#if (title)}
+				<h2>{@html title}</h2>
+			{/if}
+			{#if (event)}
+				<h3>{@html event}</h3>
+			{/if}
+		</div>
+	{/if}
 
 	{#if (nextSection)}
 		<div class="nav-container">
