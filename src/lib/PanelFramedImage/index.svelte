@@ -23,11 +23,9 @@
 
     .container {
         display: flex;
-        max-height: 50vh;
-        width: auto;
+        max-width: 800px;
         flex-flow: column;
         justify-items: center;
-        object-fit: contain;
     }
 
     img {
@@ -43,6 +41,5 @@
         text-align: left;
         margin-top: 0.5rem;
         width: 100%;
-        object-fit: contain;
     }
 </style>
