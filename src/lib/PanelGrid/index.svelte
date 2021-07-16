@@ -9,6 +9,7 @@
 </script>
 
 <section 
+    id="cartography"
     class="panel center"
     use:inView
     on:enter={ () => { headline.style.opacity = 1; } }
@@ -21,7 +22,7 @@
             <img src="/images/projects/cartography/3d_terrain_4.jpg">
         </div>
         <div class="image-container">
-            <img src="/images/TOPP.jpg">
+            <img src="/images/projects/cartography/topp.jpg">
         </div>
         <div class="image-container">
             <img src="/images/projects/seeingearth/temperature.jpg">
@@ -49,7 +50,7 @@
 
 <div class="headline bleed-padding" bind:this="{headline}">
     <h2>Cartography</h2>
-    <h3>Sketches from Projects</h3>
+    <h3>Samples from Projects</h3>
 </div>
 
 <div class="button-position bleed-padding">

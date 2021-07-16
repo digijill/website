@@ -6,7 +6,6 @@
 	import Cursor from '$lib/Cursor.svelte';
 	import PanelGrid from '$lib/PanelGrid/index.svelte';
 	import { onMount } from 'svelte';
-import Index from '$lib/Intro/index.svelte';
 
 	let breakpointCondition = "(max-width: 1000px)";
 	let flag = true;
