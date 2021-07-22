@@ -1,8 +1,8 @@
 :root {
-	--base-color: #1EB2FF;
+	--base-color: #ffffff;
 	--light-color: #ffffff;
 	--dark-color: #181517;
-	--text-color: #ffffff;
+	--text-color: #000000;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 }

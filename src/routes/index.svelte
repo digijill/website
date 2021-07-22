@@ -1,11 +1,8 @@
 <script>
 	import projects from '../data/projects.json';
-	import Intro from '$lib/Intro/index.svelte';
-	import PanelFullBleed from '$lib/PanelFullBleed/index.svelte';
+	import PanelFramedImage from '$lib/PanelFramedImage/index.svelte';
 	import Footer from '$lib/FooterHome.svelte';
 	import Cursor from '$lib/Cursor.svelte';
-	import PanelGrid from '$lib/PanelGrid/index.svelte';
-	import { onMount } from 'svelte';
 
 	let breakpointCondition = "(max-width: 1000px)";
 	let flag = true;
@@ -23,13 +20,9 @@
 
 <Cursor />
 
-<Intro />
-
 {#each projectList as project}
-	<PanelFullBleed {project} />
+	<PanelFramedImage {project} />
 {/each}
-
-<PanelGrid />
 
 <Footer {footerContent} {linkText} {link} />
 
