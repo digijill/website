@@ -6,6 +6,14 @@
 </script>
 
 <div 
+    class="button project-info-button"
+    on:pointerup="{() => projectButtonActive = !projectButtonActive}">
+    <p>quick info
+        <span class="open-close-button">+</span>
+    </p>
+</div>
+
+<div 
     class="project-info" 
     class:active = {projectButtonActive}
     use:inView
@@ -18,13 +26,6 @@
         <div class="logistics">{@html logistics}</div>
         <div class="description-short">{@html description_short}</div>
     </div>
-    <div 
-        class="button project-info-button"
-        on:pointerup="{() => projectButtonActive = !projectButtonActive}">
-        <p>quick info
-            <span class="open-close-button">+</span>
-        </p>
-    </div>
 </div>
 
 <style>
@@ -34,8 +35,9 @@
         max-height: 100vh;
         position: absolute;
         bottom: 0;
-        left: calc(165px - 100vw);
+        left: -100vw;
         transition: left 1s;
+        z-index: 10;
     }
 
     .project-info.active {
@@ -46,7 +48,8 @@
         display: inline-block;
         width: calc(100vw - 165px);
         padding: 4rem;
-        background-color: #1EB2FF;
+        color: white;
+        background-color: black;
     }
 
     .description {
@@ -63,27 +66,7 @@
         padding-left: 1.5rem;
     }
 
-   .project-info-button, .project-button {
-        display: inline-block;
-        position: absolute;
-        bottom: 60px;
-        width: 165px !important;
-        text-align: center;
-        background-color: #1EB2FF;
-        font-weight: 400;
-    }
-
-    .project-info-button p, .project-button p {
-        line-height: 2rem;
-        padding-bottom: 8px;
-        margin: 0.5rem 0;
-    }
-
-    .project-button p {
-        margin: 1rem 0 0.5rem 0;
-    }
-
-    .project-info-button span {
+    .button span {
         color: white;
         font-size: 2rem;
         position: relative;
@@ -109,6 +92,28 @@
         display: none;
     }
 
+    .button {
+        display: inline-block;
+        text-align: center;
+        color: white;
+        background-color: black;
+        font-weight: 300;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 20;
+    }
+
+    .button p {
+        line-height: 2rem;
+        padding-bottom: 8px;
+        margin: 1rem 2rem 0.5rem 2rem;
+    }
+
+    .active .project-info-button {
+            right: 2rem;
+            bottom: 0;
+        }
+
     @media (max-width: 1260px) {
         .description, .logistics {
             width: 100%;
@@ -131,21 +136,12 @@
         .project-info-text-block {
             padding: 2rem;
         }
-
-        .project-button {
-            left: 2rem;
-        }
     }
 
     @media (max-width: 700px) {
 
         .active .project-info-text-block {
             width: 100%;
-        }
-
-        .active .project-info-button {
-            right: 2rem;
-            bottom: 0;
         }
     }
 

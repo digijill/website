@@ -60,16 +60,13 @@
                     <LinkToAnotherPage { linkText } { link  } />
                 </div>
             {/if}
+            {#if (description)}
+                <div class="button-position bleed-padding">
+                    <ContentSlider { description } { description_short } { logistics } />
+                </div>
+            {/if}
         </div>
     </div>
-
-
-
-    <!-- {#if (description)}
-        <div class="button-position bleed-padding">
-            <ContentSlider { description } { description_short } { logistics } />
-        </div>
-    {/if} -->
 </section>
 
 <style>
@@ -127,6 +124,7 @@
         filter: saturate(0);
         transition-property: filter;
         transition-duration: 1s;
+        transition-delay: 1s;
     }
 
     p {
