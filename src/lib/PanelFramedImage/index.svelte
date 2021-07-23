@@ -39,12 +39,6 @@
     {/if}
 
     <div class="content-block">
-        {#if project.event}
-            <div class="event">
-                <h3>{@html project.event }</h3>
-            </div>
-        {/if}
-
         <div class="image-container" bind:this={imageContainer} bind:clientWidth={w}>
             <img bind:this={heroImage}
                 src={project.src} 
@@ -55,11 +49,18 @@
                 <p id="captionPara">{project.caption}</p>
             {/if}
         </div>
-        {#if (link)}
-            <div class="button-position bleed-padding">
-                <LinkToAnotherPage { linkText } { link  } />
-            </div>
-        {/if}
+        <div class="under-image">
+            {#if project.event}
+                <div class="event">
+                    <h3>{@html project.event }</h3>
+                </div>
+            {/if}
+            {#if (link)}
+                <div class="button-position">
+                    <LinkToAnotherPage { linkText } { link  } />
+                </div>
+            {/if}
+        </div>
     </div>
 
 
@@ -104,12 +105,12 @@
 
     .content-block {
         position: relative;
-        top: -117px;
+        top: -120px;
     }
 
     .event {
         text-align: right;
-        z-index: 10;
+        margin-top: 0.5rem;
     }
 
     .image-container {
@@ -126,7 +127,6 @@
         filter: saturate(0);
         transition-property: filter;
         transition-duration: 1s;
-        transition-delay: 1s;
     }
 
     p {
@@ -140,8 +140,9 @@
         padding-top: 0;
     }
 
-    .button-position {
+    .under-image {
+        padding-left: 100px;
         display: flex;
-        flex-direction: row-reverse;
+        justify-content: space-between;
     }
 </style>
