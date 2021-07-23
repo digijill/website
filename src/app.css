@@ -77,6 +77,14 @@ button:focus:not(:focus-visible) {
 
 /* layout */
 
+.wrapper {
+	background-color: var(--dark-color);
+}
+
+.wrapper p {
+	color: var(--light-color);
+}
+
 .fullscreen {
 	width: 100vw;
 	height: 100vh;
@@ -128,13 +136,6 @@ button:focus:not(:focus-visible) {
 	align-items: center;
 }
 
-.background-pattern {
-	background-image: url("/images/backgrounds/pattern.png");
-	background-size: 10vh 10vh;
-	background-repeat: repeat; 
-	background-position: top left;
-}
-
 /* typography */
 
 h1 {
@@ -151,9 +152,26 @@ h2 {
 	line-height: 1;
 }
 
+h2 {
+	color: white;
+	font-family: freight-big-pro, serif;
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: 0.15rem;
+}
+
 h3 {
 	font-size: 2.6rem;
 	font-weight: 300;
+}
+
+h3 {
+	font-size: 2rem;
+	color: white;
+}
+
+.bleed-padding {
+	padding: 2rem;
 }
 
 .credits h3 {
@@ -189,6 +207,7 @@ ul, ol {
 .button {
 	color: white;
 	background-color: black;
+	border: 1px solid white;
 }
 
 .button:hover {

@@ -26,6 +26,7 @@
 <section 
     id={project.id}
     class="standard-margin"
+    class:zero-top-padding="{!project.panelColor}"
     bind:this="{panel}"
     use:inView
     on:enter={ () => { heroImage.style.filter = "saturate(100%)"; } }
@@ -41,7 +42,7 @@
         </div>
     {/if}
 
-    <div class="content-block">
+    <div class:content-block="{!project.panelColor}">
         <div class="image-container" bind:this={imageContainer} bind:clientWidth={w}>
             <img bind:this={heroImage}
                 src={project.src} 
@@ -64,7 +65,7 @@
                 </div>
             {/if}
             {#if (description)}
-                <div class="button-position bleed-padding">
+                <div class="button-position">
                     <ContentSlider { description } { description_short } { logistics } />
                 </div>
             {/if}
@@ -88,6 +89,7 @@
 
     h3 {
         font-size: 2rem;
+        color: black;
     }
 
     .title {
@@ -111,15 +113,14 @@
     .content-block {
         position: relative;
         top: -120px;
+        padding-left: 100px;
     }
 
     .event {
-        text-align: right;
         margin-top: 0.5rem;
     }
 
-    .image-container {
-        padding-left: 100px;
+    .image-container img {
         overflow: hidden;
     }
 
@@ -142,13 +143,12 @@
         width: 100%;
     }
 
-    .standard-margin {
-        padding-top: 0;
-    }
-
     .under-image {
-        padding-left: 100px;
         display: flex;
         justify-content: space-between;
+    }
+
+    .zero-top-padding {
+        padding-top: 0;
     }
 </style>
