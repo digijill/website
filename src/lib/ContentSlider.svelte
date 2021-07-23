@@ -7,6 +7,7 @@
 
 <div 
     class="button project-info-button"
+    class:active = {projectButtonActive}
     on:pointerup="{() => projectButtonActive = !projectButtonActive}">
     <p>quick info
         <span class="open-close-button">+</span>
@@ -34,7 +35,7 @@
         width: 100vw;
         max-height: 100vh;
         position: absolute;
-        bottom: 0;
+        bottom: -10px;
         left: -100vw;
         transition: left 1s;
         z-index: 10;
@@ -70,7 +71,7 @@
         color: white;
         font-size: 2rem;
         position: relative;
-        top: 0.4rem;
+        top: 0.2rem;
     }
 
     .project-info.active {
