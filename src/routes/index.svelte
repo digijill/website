@@ -27,7 +27,7 @@
 	<PanelFramedImage {project} />
 {/each}
 
-<Footer {footerContent} {linkText} {link} />
+<!-- <Footer {footerContent} {linkText} {link} /> -->
 
 <style>
 	section {
