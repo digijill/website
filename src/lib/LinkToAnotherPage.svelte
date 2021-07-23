@@ -14,8 +14,10 @@
     .button.another-page-button {
         display: inline-block;
         text-align: center;
-        background-color: #1EB2FF;
-        font-weight: 400;
+        color: white;
+        background-color: black;
+        font-weight: 300;
+        margin-top: 1rem;
     }
 
     .button.another-page-button p {

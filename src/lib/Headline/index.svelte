@@ -3,7 +3,7 @@
 </script>
 
 <section id="intro">
-<h1>Jill Fantauzza, digital craft</h1>
+<h1>Jill Fantauzza / digital craft</h1>
 </section>
 
 <style>

@@ -1,14 +1,19 @@
 <script>
     import { onMount } from 'svelte';
+    import LinkToAnotherPage from "$lib/LinkToAnotherPage.svelte";
+    import ContentSlider from "$lib/ContentSlider.svelte";
     import inView from '$lib/actions/inView.js';
 
     export let project;
     let imageContainer, heroImage, w, panel;
+    let link =  project.link? project.link : null;
+    let description =  project.description? project.description : null;
+    let description_short =  project.description_short? project.description_short : null;
+    let logistics =  project.logistics? project.logistics : null;
+    const linkText = "view project";
 
     const sizeImageContainer = () => {
         imageContainer.style.height = `${w/2}px`;
-        heroImage.style.objectFit = "cover";
-        heroImage.style.objectPosition = "50% 50%";
     }
 
     onMount (() => {
@@ -33,7 +38,7 @@
         </div>
     {/if}
 
-    <div class="content">
+    <div class="content-block">
         {#if project.event}
             <div class="event">
                 <h3>{@html project.event }</h3>
@@ -50,7 +55,20 @@
                 <p id="captionPara">{project.caption}</p>
             {/if}
         </div>
+        {#if (link)}
+            <div class="button-position bleed-padding">
+                <LinkToAnotherPage { linkText } { link  } />
+            </div>
+        {/if}
     </div>
+
+
+
+    <!-- {#if (description)}
+        <div class="button-position bleed-padding">
+            <ContentSlider { description } { description_short } { logistics } />
+        </div>
+    {/if} -->
 </section>
 
 <style>
@@ -84,7 +102,7 @@
         z-index: 10;
     }
 
-    .content {
+    .content-block {
         position: relative;
         top: -117px;
     }
@@ -102,6 +120,9 @@
     img {
         display: block;
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
         filter: saturate(0);
         transition-property: filter;
         transition-duration: 1s;
@@ -117,5 +138,10 @@
 
     .standard-margin {
         padding-top: 0;
+    }
+
+    .button-position {
+        display: flex;
+        flex-direction: row-reverse;
     }
 </style>
