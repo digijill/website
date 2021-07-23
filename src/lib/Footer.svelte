@@ -5,12 +5,18 @@
     export let link;
 </script>
 
+<footer id="footer" class="standard-margin">
+    <div class="credits">
+        {@html footerContent}
+    </div>
+    <LinkToAnotherPage { linkText } {link} />
+</footer>
+
 <style>
 
     footer {
         display: flex;
         justify-content: space-between;
-        width: 100%;
     }
 
     .credits {
@@ -37,12 +43,3 @@
 	}
 
 </style>
-
-<footer id="footer" class="standard-margin panelColor">
-    <div class="credits">
-        {@html footerContent}
-    </div>
-    <LinkToAnotherPage { linkText } {link} />
-    <!-- <div>&#169; 2021 Jill Fantauzza</div>
-    <div class="made-with">Made with Svelte ❤️</div> -->
-</footer>

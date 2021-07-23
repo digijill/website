@@ -27,7 +27,7 @@
 	<PanelFramedImage {project} />
 {/each}
 
-<!-- <Footer {footerContent} {linkText} {link} /> -->
+<Footer {footerContent} {linkText} {link} />
 
 <style>
 	section {
@@ -49,4 +49,8 @@
 		top: 0;
 		display: block;
 	}
+
+	p {
+        color: white !important;
+    }
 </style>

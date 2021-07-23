@@ -33,7 +33,10 @@
 >
 
     {#if project.title}
-        <div class="title">
+        <div 
+        class="title"
+        class:large-title="{project.id === 'oqy' || project.id === 'mapping-migrations'}"
+        >
             <h2>{@html project.title }</h2>
         </div>
     {/if}
@@ -98,6 +101,11 @@
         align-items: center;
         position: relative;
         z-index: 30;
+    }
+
+    .large-title {
+        width: 220px;
+        height: 220px;
     }
 
     .content-block {

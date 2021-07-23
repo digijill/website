@@ -17,7 +17,7 @@
     footer {
         display: flex;
         justify-content: space-between;
-        padding: 2rem;
+        padding: 2rem 6rem;
     }
 
     @media (max-width: 500px) {

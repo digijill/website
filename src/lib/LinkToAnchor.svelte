@@ -15,7 +15,7 @@
     .button.another-page-button {
         display: inline-block;
         text-align: center;
-        background-color: #1EB2FF;
+        background-color: var(--light-color);
         font-weight: 400;
     }
 
@@ -23,6 +23,7 @@
         line-height: 2rem;
         padding-bottom: 8px;
         margin: 1rem 2rem 0.5rem 2rem;
+        color: black;
     }
 
 </style>

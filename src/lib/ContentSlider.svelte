@@ -71,7 +71,8 @@
         color: white;
         font-size: 2rem;
         position: relative;
-        top: 0.2rem;
+        top: 0.4rem;
+        line-height: 0;
     }
 
     .project-info.active {

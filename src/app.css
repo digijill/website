@@ -1,7 +1,8 @@
+
 :root {
 	--base-color: #ffffff;
 	--light-color: #ffffff;
-	--dark-color: #181517;
+	--dark-color: #000000;
 	--text-color: #000000;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
@@ -11,7 +12,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--base-color);
-	font-family: usual, 'Helvetica Neue', Arial, sans-serif;
+	font-family: 'usual', 'Helvetica Neue', Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.28125;	
 	font-weight: 300;
@@ -42,6 +43,10 @@ img, video {
 
 footer {
 	background-color: var(--dark-color);
+}
+
+footer p {
+	color: var(--light-color);
 }
 
 p {
@@ -134,7 +139,7 @@ button:focus:not(:focus-visible) {
 
 h1 {
 	/* font-size: 4.209rem; */
-	font-size: 4.2rem;
+	font-size: 5rem;
 	font-weight: 400;
 	line-height: 1.25;
 }
