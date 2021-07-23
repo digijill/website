@@ -14,6 +14,7 @@
         font-family: freight-big-pro, serif;
         font-weight: 900;
         font-style: normal;
+        line-height: 0.9;
     }
 
 </style>
