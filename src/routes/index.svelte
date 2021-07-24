@@ -1,7 +1,7 @@
 <script>
 	import projects from '../data/projects.json';
 	import Headline from '$lib/Headline/index.svelte';
-	import PanelFramedImage from '$lib/PanelFramedImage/index.svelte';
+	import PanelFramedImage from '$lib/PanelFramedImageHome/index.svelte';
 	import Footer from '$lib/FooterHome.svelte';
 	import Cursor from '$lib/Cursor.svelte';
 
