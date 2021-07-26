@@ -32,7 +32,7 @@
 <style>
 
     .project-info {
-        width: 100vw;
+        width: 90vw;
         max-height: 100vh;
         position: absolute;
         bottom: -10px;
@@ -47,10 +47,9 @@
 
     .project-info-text-block {
         display: inline-block;
-        width: calc(100vw - 165px);
-        padding: 4rem;
         color: white;
         background-color: black;
+        padding-bottom: 4rem;
     }
 
     .description {
@@ -91,6 +90,7 @@
 
     .description-short {
         display: none;
+        padding-bottom: 3rem;
     }
 
     .button {
@@ -100,7 +100,7 @@
     }
 
     .active .project-info-button {
-            right: 2rem;
+            left: 6rem;
             bottom: 0;
         }
 
@@ -145,16 +145,10 @@
         }
     }
 
-    @media (max-height: 450px) {
+    @media (max-height: 500px) {
 
         .project-info-text-block {
             overflow-y: scroll;
-        }
-    }
-
-    @media (max-width: 550px) and (max-height: 580px) {
-        .description {
-            width: 100%;
         }
     }
 
