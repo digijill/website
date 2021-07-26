@@ -65,8 +65,8 @@
     }
 
     .title {
-        width: 200px;
-        height: 200px;
+        width: 12.5rem;
+        height: 12.5rem;
         background-color: black;
         border-radius: 50%;
         text-align: center;
@@ -78,20 +78,21 @@
     }
 
     .large-title {
-        width: 220px;
-        height: 220px;
+        width: 13rem;
+        height: 13rem;
     }
 
     .content-block {
         position: relative;
-        top: -120px;
-        padding-left: 100px;
+        top: -7.4rem;
+        padding-left: 6.25rem;
     }
 
     .image-container {
         position: relative;
         width: 100%;
         padding-top: 50%; /* 2:1 Aspect Ratio */
+        margin-bottom: 0.6rem;
     }
 
     .image-container img {
@@ -112,10 +113,6 @@
         transition-delay: 0.5s;
     }
 
-    .event {
-        margin-top: 0.5rem;
-    }
-
     p {
         font-size: 1rem;
         text-align: left;
@@ -130,6 +127,11 @@
 
     .zero-top-padding {
         padding-top: 0;
+    }
+
+    /* @media screen and (max-width: 1100px) {
+
+
     }
 
     @media screen and (max-width: 500px) {
@@ -151,5 +153,5 @@
             top: -16vw;
             padding-left: 16vw;
         }
-    }
+    } */
 </style>

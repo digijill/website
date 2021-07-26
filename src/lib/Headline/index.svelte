@@ -3,7 +3,7 @@
 </script>
 
 <header id="intro">
-<h1><span class="wrap">Jill Fantauzza</span> / <span class="wrap">digital craft</span></h1>
+<h1><span class="wrap">Jill Fantauzza</span> <span class="wrap">/ digital craft</span></h1>
 </header>
 
 <style>
@@ -17,7 +17,7 @@
         white-space: nowrap;
     }
 
-    @media screen and (max-width: 600px) {
+    /* @media screen and (max-width: 600px) {
         h1 {
             padding: 2rem 1rem;
         }
@@ -27,6 +27,6 @@
         h1 {
             font-size: 15vw;
         }
-    }
+    } */
 
 </style>

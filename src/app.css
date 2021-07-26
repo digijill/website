@@ -6,6 +6,7 @@
 	--text-color: #000000;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	font-size: 1vmax;
 }
 
 body {
@@ -13,7 +14,6 @@ body {
 	margin: 0;
 	background-color: var(--base-color);
 	font-family: 'usual', 'Helvetica Neue', Arial, sans-serif;
-	font-size: 16px;
 	line-height: 1.28125;	
 	font-weight: 300;
 	font-style: normal;
@@ -46,10 +46,6 @@ footer {
 
 footer p {
 	color: var(--light-color);
-}
-
-p {
-	line-height: 1.5;
 }
 
 a {
@@ -156,9 +152,10 @@ h2 {
 }
 
 h3 {
-	font-size: 2rem;
+	font-size: calc(14px + 1vw);
 	font-weight: 300;
 	color: white;
+	line-height: 0.9;
 }
 
 .bleed-padding {
@@ -170,7 +167,8 @@ h3 {
 }
 
 p, li {
-	font-size: 1.1rem;
+	font-size: calc(12px + .5vw);
+	line-height: 1.5;
     padding-bottom: 1rem;
 }
 
@@ -214,13 +212,13 @@ button:focus:not(:focus-visible) {
 
 /* cross-component styles */
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
 	body {
 		cursor: auto;
 	}
-}
+} */
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
 	h2 {
 		font-size: 10vw;
 		font-weight: 400;
@@ -247,4 +245,4 @@ button:focus:not(:focus-visible) {
 		font-size: 0.75rem;
 	}
 
-}
+} */

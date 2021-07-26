@@ -69,15 +69,14 @@
 
     .button span {
         color: white;
-        font-size: 2rem;
+        font-size: calc(16px + 0.8vmax);
         position: relative;
-        top: 0.4rem;
+        top: 0.3rem;
         line-height: 0;
     }
 
     .project-info.active {
         left: 0;
-        /* background-color: #1EB2FF; */
     }
 
     .open-close-button {
@@ -100,7 +99,6 @@
         color: white;
         background-color: black;
         font-weight: 300;
-        margin-top: 1rem;
         position: relative;
         z-index: 20;
     }
@@ -150,7 +148,6 @@
     @media (max-width: 650px) {
         .project-info-text-block {
             padding: 2rem 2rem 4rem 2rem;
-            background-color: #1EB2FF;
         }
 
         div.logistics {

@@ -17,7 +17,6 @@
         color: white;
         background-color: black;
         font-weight: 300;
-        margin-top: 1rem;
     }
 
     .button.another-page-button p {
