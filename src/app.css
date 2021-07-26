@@ -199,6 +199,17 @@ ul, ol {
 	border: 1px solid white;
 }
 
+.button.another-page-button p {
+	padding-bottom: 0.5rem;
+	margin: 1rem 2rem 0.5rem 2rem;
+}
+
+.button.project-info-button p {
+	padding-bottom: 0.5rem;
+	margin: 1rem 2rem 0.5rem 2rem;
+	font-weight: 300;
+}
+
 .button:hover {
     transform: scale(1.02);
 	-webkit-transform: scale(1.02);

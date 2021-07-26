@@ -71,7 +71,7 @@
         color: white;
         font-size: calc(16px + 0.8vmax);
         position: relative;
-        top: 0.3rem;
+        top: 0.25rem;
         line-height: 0;
     }
 
@@ -98,15 +98,8 @@
         text-align: center;
         color: white;
         background-color: black;
-        font-weight: 300;
         position: relative;
         z-index: 20;
-    }
-
-    .button p {
-        line-height: 2rem;
-        padding-bottom: 8px;
-        margin: 1rem 2rem 0.5rem 2rem;
     }
 
     .active .project-info-button {
