@@ -6,15 +6,10 @@
   
 <a href={link}>
     <div class="button another-page-button">
-        <p>{ linkText }</p>
+        <p class="no-wrap">{ linkText }</p>
     </div>
 </a>
 
 <style>
-
-    .button.another-page-button {
-        display: inline-block;
-        text-align: center;
-    }
 
 </style>

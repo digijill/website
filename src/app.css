@@ -155,7 +155,6 @@ h3 {
 	font-size: calc(14px + 1vw);
 	font-weight: 300;
 	color: white;
-	line-height: 0.9;
 }
 
 .bleed-padding {
@@ -193,14 +192,26 @@ ul, ol {
 	font-style: italic;
 }
 
+.no-wrap {
+	white-space: nowrap;
+}
+
 .button {
 	color: white;
 	background-color: black;
 	border: 1px solid white;
 }
 
+.button.another-page-button {
+	display: inline-block;
+	text-align: center;
+	color: white;
+	background-color: black;
+	margin-top: 0.4rem;
+}
+
 .button.another-page-button p {
-	padding-bottom: 0.5rem;
+	padding-bottom: 0.6rem;
 	margin: 1rem 2rem 0.5rem 2rem;
 }
 

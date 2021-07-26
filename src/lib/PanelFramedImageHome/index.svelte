@@ -92,7 +92,6 @@
         position: relative;
         width: 100%;
         padding-top: 50%; /* 2:1 Aspect Ratio */
-        margin-bottom: 0.6rem;
     }
 
     .image-container img {
@@ -128,30 +127,4 @@
     .zero-top-padding {
         padding-top: 0;
     }
-
-    /* @media screen and (max-width: 1100px) {
-
-
-    }
-
-    @media screen and (max-width: 500px) {
-        h2 {
-            font-size: 9vw;
-        }
-
-        .title {
-            width: 33.3vw;
-            height: 33.3vw;
-        }
-
-        .large-title {
-            width: 40vw;
-            height: 40vw;
-        }
-
-        .content-block {
-            top: -16vw;
-            padding-left: 16vw;
-        }
-    } */
 </style>
