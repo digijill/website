@@ -124,7 +124,17 @@
         justify-content: space-between;
     }
 
+    .event {
+        margin-top: 0.4rem;
+    }
+
     .zero-top-padding {
         padding-top: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        .image-container {
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+        }
     }
 </style>
