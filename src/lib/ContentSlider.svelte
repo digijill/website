@@ -38,7 +38,7 @@
         bottom: -10px;
         left: -100vw;
         transition: left 1s;
-        z-index: 10;
+        z-index: 30;
     }
 
     .project-info.active {
@@ -95,7 +95,7 @@
 
     .button {
         position: relative;
-        z-index: 20;
+        z-index: 40;
         margin-top: 0.4rem;
     }
 
