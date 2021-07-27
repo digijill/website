@@ -152,4 +152,10 @@
         }
     }
 
+    @media screen and (max-width: 500px) {
+        .project-info {
+            width: 96.75vw;
+        }
+    }
+
 </style>

@@ -232,39 +232,9 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-/* cross-component styles */
-
-/* @media (max-width: 1000px) {
-	body {
-		cursor: auto;
-	}
-} */
-
-/* @media (max-width: 500px) {
-	h2 {
-		font-size: 10vw;
-		font-weight: 400;
-	}
-	
-	h3 {
-		font-size: 8.125vw;
-		font-weight: 300;
-	}
-
-	.content p {
-		font-size: 5vw;
-	}
-
-	.content.smalltext p, .content.smalltext li {
-		font-size: 5vw;
-	}
+@media (max-width: 500px) {
 
 	.standard-margin, .bleed-padding {
 		padding: 1rem;
 	}
-
-	p.small {
-		font-size: 0.75rem;
-	}
-
-} */
+}
