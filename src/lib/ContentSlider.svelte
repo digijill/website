@@ -36,7 +36,7 @@
         max-height: 100vh;
         position: absolute;
         bottom: -10px;
-        left: -100vw;
+        left: -101vw;
         transition: left 1s;
         z-index: 30;
     }
@@ -49,7 +49,7 @@
         display: inline-block;
         color: white;
         background-color: black;
-        padding-bottom: 4rem;
+        padding: 4rem;
     }
 
     .description {
@@ -154,7 +154,7 @@
 
     @media screen and (max-width: 500px) {
         .project-info {
-            width: 96.75vw;
+            width: 98vw;
         }
     }
 

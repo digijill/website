@@ -34,7 +34,7 @@
 
     <div class="headline bleed-padding" bind:this="{headline}">
         {#if (project.title)}
-            <h2>{@html project.title}</h2>
+            <h1>{@html project.title}</h1>
         {/if}
         {#if (project.event)}
             <h3>{@html project.event}</h3>
@@ -56,7 +56,10 @@
 </section>
 
 <style>
-
+	h1 {
+		color: white;
+	}
+    
     img {
         width: 100%;
         height: 100%;

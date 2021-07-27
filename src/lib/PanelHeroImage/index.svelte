@@ -22,7 +22,7 @@
 
 	<div class="headline bleed-padding">
         {#if (title)}
-            <h2>{@html title}</h2>
+            <h1>{@html title}</h1>
         {/if}
         {#if (event)}
             <h3>{@html event}</h3>
@@ -38,6 +38,9 @@
 </section>
 
 <style>
+	h1 {
+		color: white;
+	}
 
 	img {
 		width: 100%;

@@ -51,7 +51,7 @@
 	{#if (id !== "carboncurve-hero")}
 		<div class="headline bleed-padding">
 			{#if (title)}
-				<h2>{@html title}</h2>
+				<h1>{@html title}</h1>
 			{/if}
 			{#if (event)}
 				<h3>{@html event}</h3>
@@ -88,5 +88,9 @@
 
 	video.carboncurve {
 		object-position: 0 0;
+	}
+
+	h1 {
+		color: white;
 	}
 </style>

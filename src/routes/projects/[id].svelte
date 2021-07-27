@@ -60,6 +60,10 @@ export async function load({ page, fetch }) {
     <Footer {footerContent} {linkText} {link} />
 </div>
 
+<style>
+
+</style>
+
 
 
 

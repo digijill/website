@@ -4,7 +4,7 @@
 
 <section 
     id={project.id}
-    class="panel split standard-margin"
+    class="split standard-margin"
     class:panelColor="{project.panelColor === true}"
 >
     <img

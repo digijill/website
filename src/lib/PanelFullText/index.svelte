@@ -7,7 +7,7 @@
     class="fullscreen"
 >
     <div class="fullscreen center">
-        <div class="content smalltext">
+        <div class="content">
             {@html project.text} 
        </div>
     </div>

@@ -91,17 +91,11 @@ button:focus:not(:focus-visible) {
 	top: 0;
 }
 
-.content p {
+.content p, .content li {
 	max-width: 80vw;
-	font-size: 4vw;
-	text-transform: none;
+	font-size: calc(14px + 1vw);
 	font-weight: 300;
-	line-height: 1.4;
-}
-
-.content.smalltext p, .content.smalltext li {
-	max-width: 80vw;
-	font-size: 2.5vw;
+	line-height: 1.55;
 }
 
 .panel {
@@ -139,6 +133,8 @@ h1 {
 	font-size: 5rem;
 	font-weight: 900;
 	line-height: 0.9;
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05),
+    5px 5px 10px rgba(0, 0, 0, 0.05), -5px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
@@ -149,12 +145,16 @@ h2 {
 	font-style: italic;
 	letter-spacing: 0.1rem;
 	line-height: 1;
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05),
+    5px 5px 10px rgba(0, 0, 0, 0.05), -5px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 h3 {
 	font-size: calc(14px + 1vw);
 	font-weight: 300;
 	color: white;
+	text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05),
+    5px 5px 10px rgba(0, 0, 0, 0.05), -5px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 .bleed-padding {
