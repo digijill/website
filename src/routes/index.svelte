@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>from Jill</title>
+	<title>Jill Fantauzza</title>
 </svelte:head>
 
 <Headline />
