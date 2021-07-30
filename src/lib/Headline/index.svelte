@@ -3,7 +3,7 @@
 </script>
 
 <header id="intro">
-<h1><span class="no-wrap">Jill Fantauzza</span> <span class="wrap">/ digital craft</span></h1>
+<h1><span class="no-wrap">Jill Fantauzza</span> <span class="no-wrap">/ digital craft</span></h1>
 </header>
 
 <style>

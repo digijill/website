@@ -38,7 +38,8 @@
         footer {
             flex-direction: column;
             justify-content: center;
-            align-items: center
+            align-items: center;
+            padding-bottom: 3rem;
         }
 	}
 

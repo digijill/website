@@ -32,7 +32,7 @@
 <style>
 
     .project-info {
-        width: 90vw;
+        width: 87.25vw;
         max-height: 100vh;
         position: absolute;
         bottom: -10px;
@@ -154,7 +154,7 @@
 
     @media screen and (max-width: 500px) {
         .project-info {
-            width: 98vw;
+            width: 97vw;
         }
     }
 

@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Jill Fantauzza</title>
+	<title>Jill Fantauzza / digital craft</title>
 </svelte:head>
 
 <Headline />

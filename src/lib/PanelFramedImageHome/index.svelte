@@ -16,9 +16,6 @@
 <section 
     id={project.id}
     class="standard-margin zero-top-padding"
-    use:inView
-    on:enter={ () => { heroImage.style.filter = "saturate(100%)"; } }
-    on:exit={ () => { heroImage.style.filter = "saturate(0)"; } }
 >
 
     {#if project.title}
@@ -31,8 +28,13 @@
     {/if}
 
     <div class="content-block">
-        <div class="image-container">
+        <div class="image-container"
+            use:inView
+            on:enter={ () => { heroImage.style.filter = "saturate(100%)"; } }
+            on:exit={ () => { heroImage.style.filter = "saturate(0)"; } }
+        >
             <img bind:this={heroImage}
+                class:alt-position="{project.id === 'jade'}"
                 src={project.src} 
                 alt={project.alt}
                 srcset="{project.src} 2880w, {project.src_small} 500w"
@@ -86,6 +88,7 @@
         position: relative;
         top: -7.4rem;
         padding-left: 6.25rem;
+        padding-right: 6.25rem;
     }
 
     .image-container {
@@ -110,6 +113,10 @@
         transition-property: filter;
         transition-duration: 0.5s;
         transition-delay: 0.5s;
+    }
+
+    img.alt-position {
+        object-position: center top;
     }
 
     p {
