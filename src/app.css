@@ -102,8 +102,8 @@ button:focus:not(:focus-visible) {
 
 .panel {
 	position: relative;
-	width: 100vw !important;
-	height: 100vh !important;
+	width: 100vw;
+	height: 100vh;
 }
 
 .standard-margin {
@@ -112,12 +112,10 @@ button:focus:not(:focus-visible) {
 
 .center {
 	display: flex;
-	position: relative;
 	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
 	align-items: center;
 	justify-content: center;
+	text-align: left;
 }
 
 .split {
@@ -134,6 +132,13 @@ button:focus:not(:focus-visible) {
 	background-position: top left;
 }
 
+.bottom-nav {
+    width: 100vw;
+    position: absolute;
+    bottom: 4rem;
+    text-align: center;
+}
+
 /* typography */
 
 h1 {
@@ -147,14 +152,12 @@ h2 {
 	/* font-size: 3.157rem; */
 	font-size: 3.2rem;
 	font-weight: 400;
-	line-height: 1;
-	text-shadow: #666666 1px 1px 10px;
+	/* line-height: 1; */
 }
 
 h3 {
 	font-size: 2.6rem;
 	font-weight: 300;
-	text-shadow: #666666 1px 1px 10px;
 }
 
 .credits h3 {
@@ -203,6 +206,20 @@ button:focus:not(:focus-visible) {
 }
 
 /* cross-component styles */
+
+@media screen and (max-width: 1399px) {
+	.standard-margin {
+		padding: min(max(2rem,6vw),6rem);
+	}
+
+	h1 {
+		font-size: min(max(2rem,6vw),4.2rem);
+	}
+
+	h2 {
+		font-size: min(max(2rem,4vw),3.2rem);
+	}
+}
 
 @media (max-width: 1000px) {
 	body {
