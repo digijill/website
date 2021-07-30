@@ -220,6 +220,10 @@ button:focus:not(:focus-visible) {
 	h2 {
 		font-size: min(max(2rem,4vw),3.2rem);
 	}
+
+	h3 {
+		font-size: min(max(1.5rem,4vw),2.6rem);
+	}
 }
 
 @media (max-width: 1000px) {
@@ -229,14 +233,14 @@ button:focus:not(:focus-visible) {
 }
 
 @media (max-width: 500px) {
-
-	h1 {
-		font-size: 2rem;	
-	}
 	
 	h2 {
 		font-size: 10vw;
 		font-weight: 400;
+	}
+
+	#intro h1, #deia h1 {
+		font-size: 2rem;	
 	}
 
 	#intro h2, #deia h2 {
