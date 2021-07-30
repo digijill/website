@@ -1,6 +1,7 @@
 <script>
 	import projects from '../data/projects.json';
 	import Intro from '$lib/Intro/index.svelte';
+	import PanelDEAI from '$lib/PanelDEAI/index.svelte';
 	import PanelFullBleed from '$lib/PanelFullBleed/index.svelte';
 	import Footer from '$lib/FooterHome.svelte';
 	import Cursor from '$lib/Cursor.svelte';
@@ -24,6 +25,8 @@
 <Cursor />
 
 <Intro />
+
+<PanelDEAI />
 
 {#each projectList as project}
 	<PanelFullBleed {project} />
