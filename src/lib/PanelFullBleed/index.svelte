@@ -57,6 +57,10 @@
 
 <style>
 
+    h2 {
+        line-height: 1;
+    }
+
     img {
         width: 100%;
         height: 100%;
