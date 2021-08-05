@@ -23,6 +23,7 @@
 
     .container {
         display: flex;
+        width: 100%;
         max-width: 800px;
         flex-flow: column;
         justify-items: center;
@@ -34,6 +35,7 @@
         max-height: 100%;
         object-fit: contain;
         object-position: 50% 50%;
+        width: 100%;
     }
 
     p {

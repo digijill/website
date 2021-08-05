@@ -7,10 +7,8 @@
             <h1>Hello, I'm Jill Fantauzza.</h1>
             <h1 class="paragraph-break">I'm a science communicator and creative team leader.</h1>
             <h2>My mission is to create experiences that connect people with the natural world and their own humanity.</h2>
-    </div>
-    <div class="bottom-nav">        
-        <NavBottom nextSection = "deia" />
-    </div>
+    </div>       
+    <NavBottom nextSection = "deia" />
 </section>
 
 <style>

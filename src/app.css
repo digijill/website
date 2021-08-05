@@ -83,7 +83,7 @@ button:focus:not(:focus-visible) {
 	top: 0;
 }
 
-    .bleed-padding {
+.bleed-padding {
         padding: 2rem;
     }
 
@@ -159,6 +159,10 @@ h2 {
 h3 {
 	font-size: 2.6rem;
 	font-weight: 300;
+}
+
+.headline h2 {
+	line-height: 1;
 }
 
 .credits h3 {

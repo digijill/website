@@ -60,9 +60,7 @@
 	{/if}
 
 	{#if (nextSection)}
-		<div class="nav-container">
-			<NavBottom { nextSection } />
-		</div>
+		<NavBottom { nextSection } />
 	{/if}
 
 </section>

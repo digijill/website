@@ -10,9 +10,6 @@
 <style>
 
     div.bottom-nav {
-        width: 100vw;
-        text-align: center;
-        position: relative;
         z-index: 10;
     }
 
