@@ -107,7 +107,7 @@ button:focus:not(:focus-visible) {
 }
 
 .standard-margin {
-	padding: 6rem;
+	padding: 6vw;
 }
 
 .center {

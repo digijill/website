@@ -4,10 +4,10 @@
 
 <section 
     id={project.id}
-    class="panel center standard-margin"
+    class="standard-margin"
     class:panelColor="{project.panelColor === true}"
 >
-    <div class="container">
+    <div class="image-container">
         <img
             src={project.src} 
             alt={project.alt}
@@ -21,19 +21,19 @@
 
 <style>
 
-    .container {
-        display: flex;
-        max-width: 800px;
-        flex-flow: column;
-        justify-items: center;
+    .image-container {
+        width: 100%;
+    }
+
+    .image-container img {
+        overflow: hidden;
     }
 
     img {
         display: block;
         max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        object-position: 50% 50%;
+        width: 100%;
+        height: auto;
     }
 
     p {
