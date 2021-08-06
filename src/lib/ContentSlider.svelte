@@ -71,6 +71,7 @@
         text-align: center;
         background-color: #1EB2FF;
         font-weight: 400;
+        cursor:pointer;
     }
 
     .project-info-button p, .project-button p {
