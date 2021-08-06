@@ -99,6 +99,10 @@
         margin-top: 0.4rem;
     }
 
+    .project-info-button {
+        cursor:pointer;
+    }
+
     .active .project-info-button {
             left: 6rem;
             bottom: 0;
